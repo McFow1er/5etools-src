@@ -66,6 +66,7 @@ class StyleSwitcher {
 				styleSwitcher._setActiveWide(cbWide.checked);
 			},
 		});
+      cbWide.checked = styleSwitcher.getActiveWide();
 
 		return cbWide;
 	}

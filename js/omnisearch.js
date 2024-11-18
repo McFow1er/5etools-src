@@ -129,6 +129,7 @@ class Omnisearch {
 		this._wrpSearchInput = e_({
 			tag: "div",
 			clazz: "input-group omni__wrp-input",
+			id: "omnisearch",
 			children: [
 				this._iptSearch,
 				btnClearSearch,
@@ -458,7 +459,7 @@ class Omnisearch {
 			tag: "button",
 			clazz: "ve-btn ve-btn-default ve-btn-xs ml-2",
 			title: "Help",
-			html: `<span class="glyphicon glyphicon-info-sign"></span>`,
+			html: `<span class="glyphicon glyphicon--top-2p glyphicon-info-sign"></span>`,
 			click: () => this.doShowHelp(),
 		});
 

@@ -36,7 +36,7 @@
 	&btn-toggle-nav {
 		margin-top: 5px;
 		text-align: center;
-		width: 6em;
+		width: calc(6em - 2px);
 		flex-shrink: 0;
 		height: 32px;
 		line-height: 1;
@@ -185,5 +185,6 @@
 	@media screen and (width <= #{vars.$width-screen-sm}) {
 		display: none;
 		margin-left: 0;
+		margin-right: 0;
 	}
 }

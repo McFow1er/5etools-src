@@ -11,22 +11,14 @@
 	}
 }
 
-@media screen and (width <= #{vars.$width-screen-sm}) {
+.ve-night-mode {
 	.nav > li > a {
-		border: 1px solid vars.$rgb-border-grey;
-	}
-
-	.ve-night-mode .nav > li > a {
 		border-color: vars-night.$rgb-border-grey--night;
 	}
-}
-
-.ve-night-mode {
 	.nav > li:not(.active) > a {
 		color: vars-night.$rgb-font--night;
 		background-color: vars-night.$rgb-bg--night;
-		border: 1px solid vars-night.$rgb-border-grey--trans-night;
-		border-top: 0;
+		border-color: vars-night.$rgb-border-grey--trans-night;
 
 		&:focus,
 		&:hover {

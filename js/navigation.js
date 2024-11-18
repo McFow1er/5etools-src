@@ -625,9 +625,10 @@ class NavBar {
 
 	static _getCurrentPage () {
 		let currentPage = window.location.pathname;
-		currentPage = currentPage.substr(currentPage.lastIndexOf("/") + 1);
+		currentPage = currentPage.substring(currentPage.lastIndexOf("/") + 1);
 
 		if (!currentPage) currentPage = "index.html";
+		if (!currentPage.endsWith(".html")) currentPage += ".html";
 		return currentPage.trim();
 	}
 

@@ -167,15 +167,18 @@ body::-webkit-scrollbar {
 
 .nav > li {
 	> a {
-		padding: 5px 14px 6px;
+		height: 32px;
+		padding: 5px 12px 6px;
+		border: 1px solid vars.$rgb-border-grey;
 
-		@media screen and (width > #{vars.$width-screen-md}) {
+		@media screen and (width > #{vars.$width-screen-sm}) {
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
+			border-top: 0;
 		}
 	}
 
-	@media screen and (width <= #{vars.$width-screen-md}) {
+	@media screen and (width <= #{vars.$width-screen-sm}) {
 		margin-top: 2px;
 		margin-bottom: 2px;
 	}
@@ -185,9 +188,8 @@ body::-webkit-scrollbar {
 .page__nav-inner > li.active > a:focus,
 .page__nav-inner > li.active > a:hover {
 	background-color: #006bc4;
-	border-top: 0;
 
-	@media screen and (width > #{vars.$width-screen-md}) {
+	@media screen and (width > #{vars.$width-screen-sm}) {
 		border-left: 1px solid transparent;
 		border-right: 1px solid transparent;
 		border-bottom: 1px solid #999;
@@ -280,7 +282,7 @@ body::-webkit-scrollbar {
 
 // region Override defaults to better implement filter UI
 .input-group {
-	> input.form-control,
+	> .form-control,
 	> label,
 	> button,
 	> a.ve-btn {
@@ -301,7 +303,7 @@ body::-webkit-scrollbar {
 
 	// The first horizontal row in multiple vertically-stacked input-group rows
 	&--top {
-		input.form-control,
+		.form-control,
 		label,
 		button,
 		a.ve-btn {
@@ -316,7 +318,7 @@ body::-webkit-scrollbar {
 	}
 
 	&--middle {
-		input.form-control,
+		.form-control,
 		label,
 		button,
 		a.ve-btn {
@@ -333,7 +335,7 @@ body::-webkit-scrollbar {
 	}
 
 	&--bottom {
-		input.form-control,
+		.form-control,
 		label,
 		button,
 		a.ve-btn {
@@ -351,7 +353,7 @@ body::-webkit-scrollbar {
 }
 
 .ve-night-mode .input-group {
-	> input.form-control,
+	> .form-control,
 	> label,
 	> button,
 	> a.ve-btn {

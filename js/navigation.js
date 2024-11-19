@@ -143,6 +143,36 @@ class NavBar {
 		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "https://wiki.tercept.net/en/betteR20", "Roll20 Script Help", {isExternal: true});
 		this._addElement_divider(NavBar._CAT_UTILITIES);
+		this._addElement_buttonSplit(
+			NavBar._CAT_UTILITIES,
+			{
+				metas: [
+					{
+						html: "Load Eruda Web Console",
+						click: async => {
+							var script = document.createElement('script');
+							script.src="https://cdn.jsdelivr.net/npm/eruda";
+							document.body.append(script);
+							script.onload = function () { eruda.init(); };
+						},
+					},
+					{
+						html: `<span class="glyphicon glyphicon-link"></span>`,
+						title: `Copy javascript snippet to clipboard`,
+						click: async evt => {
+							const ele = evt.currentTarget;
+							MiscUtil.pCopyTextToClipboard(`javascript:(function () { var script = document.createElement('script'); script.src="https://cdn.jsdelivr.net/npm/eruda"; document.body.append(script); script.onload = function () { eruda.init(); } })();`);
+							JqueryUtil.showCopiedEffect(ele);
+						}
+					},
+					{
+						html: `<a href="https://github.com/liriliri/eruda" class="nav__link" target="_blank"><span class="glyphicon glyphicon-new-window"></span></a>`,
+						title: `Open project page`,
+					},
+				],
+			},
+		);
+		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "changelog.html", "Changelog");
 		this._addElement_li(NavBar._CAT_UTILITIES, NavBar._getCurrentWikiHelpPage(), "Help", {isExternal: true});
 		this._addElement_divider(NavBar._CAT_UTILITIES);
